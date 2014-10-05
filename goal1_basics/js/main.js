@@ -152,7 +152,19 @@ console.log('------ arrays ----------');
 
  ********************************************/
 
+ (function(){
+     var numArray = [10, 50, 100, 200];
+     var total = 0;
+     function addTotal(a){
+         a.forEach(function(entry){
+              total += entry;
+         });
+         return total
+     }
 
+     console.log(addTotal(numArray));
+
+ })();
 
 /*******************************************
 
@@ -168,6 +180,18 @@ console.log('------ arrays ----------');
     3. output array items using string concatenation
 
  ********************************************/
+
+(function(){
+    var myArray = [];
+    var twoAdd = ["baseball", "football", "basketball"];
+    function additems(a,b){
+        b.forEach(function(e){
+            a.push(e)
+        });
+    }
+    additems(myArray, twoAdd);
+    console.log("myArray = " + myArray[0] + ", " + myArray[1]+ ", " + myArray[2]);
+})();
 
 
  // conditionals: (definition, indexing, math, if, if-else, if-else if, ternary)
@@ -300,7 +324,19 @@ console.log('------ conditionals ----------');
     1. learn if - else
  ********************************************/
 
+(function(){
+    var weather = "cloudy";
+    var bobsMood = "";
 
+    if (weather === "sunny"){
+        bobsMood = "Happy";
+        console.log("bob is " +bobsMood)
+    } else {
+        bobsMood = "sad";
+        console.log("bob is " +bobsMood)
+    }
+
+})();
 
 
 /*******************************************
@@ -320,7 +356,38 @@ console.log('------ conditionals ----------');
  ********************************************/
 
 
+(function(){
+    var weather = "cloudy";
+    var bobsMood = "";
+    var waves = 10;
 
+    if (weather === "sunny" && waves === 10){
+        bobsMood = "pumped";
+        console.log("bob is " +bobsMood)
+    } else if (weather === "sunny" && waves <= 9) {
+           if ( waves >= 5) {
+                bobsMood = "mellow";
+                console.log("bob is " +bobsMood);
+           }
+    }else if (weather === "sunny" && waves < 5) {
+        bobsMood = "bummed";
+        console.log("bob is " +bobsMood);
+    }else if (weather === "overcast" && waves <= 10) {
+        if ( waves >= 7) {
+            bobsMood = "jackedUp";
+            console.log("bob is " +bobsMood);
+        }
+    }else if (weather === "overcast" && waves <= 6) {
+        if ( waves >= 3) {
+            bobsMood = "bummed";
+            console.log("bob is " + bobsMood);
+        }
+    }else if (weather === "overcast" && waves < 2) {
+        bobsMood = "not happy";
+        console.log("bob is " + bobsMood);
+    }
+
+})();
 
 /*
     BREAKING A TERNARY CONDITIONAL DOWN TO INDIVIDUAL PIECES
@@ -356,7 +423,12 @@ console.log('------ conditionals ----------');
     4.  console.log the results
  ********************************************/
 
-
+(function(){
+    var temp = 90;
+    var weather = "sunny";
+      var student1 = (weather == "sunny") ? "happy" : (weather != "sunny" && temp >= 80) ? "content" : "sad";
+    console.log(student1);
+})();
 
 // Functions: (definition, whitespace, invocation, arguments, returns)
 console.log('------Functions ----------');
